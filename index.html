@@ -217,6 +217,34 @@
   .player .name{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.1rem; margin:8px 0 6px; }
   .player .role{ font-size:12.5px; color:var(--cyan); font-family:'JetBrains Mono',monospace; }
 
+  /* clowns */
+  .clowns-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:44px;
+  }
+  @media (max-width:600px){ .clowns-grid{ grid-template-columns:1fr; } }
+  .clown{
+    background:rgba(255,46,99,0.04);
+    border:1px dashed rgba(255,46,99,0.5);
+    border-radius:6px; padding:20px 22px;
+    position:relative; transition:transform .2s ease, border-color .2s ease;
+  }
+  .clown::before{
+    content:"🤡"; position:absolute; top:16px; right:18px; font-size:16px; opacity:0.6;
+  }
+  .clown:hover{ transform:rotate(-1deg); border-color:var(--glitch); }
+  .clown .tag{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--glitch);
+    text-transform:uppercase; letter-spacing:1.5px;
+  }
+  .clown .name{
+    font-family:'JetBrains Mono',monospace; font-weight:700; font-size:1.05rem;
+    margin:8px 0 6px; color:var(--text);
+    text-decoration:line-through; text-decoration-color:rgba(255,46,99,0.6); text-decoration-thickness:2px;
+  }
+  .clown .desc{
+    font-size:12.5px; color:var(--text-dim); font-style:italic; font-family:'JetBrains Mono',monospace;
+  }
+
   /* join */
   .join{
     text-align:center; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
@@ -245,6 +273,7 @@
     <a href="#about">about</a>
     <a href="#stats">stats</a>
     <a href="#roster">roster</a>
+    <a href="#clowns">clowns</a>
     <a href="#join">join</a>
   </div>
 </nav>
@@ -388,6 +417,34 @@
       <div class="id mono">MEMBER</div>
       <div class="name mono">Cat</div>
       <div class="role mono">"The CAT"</div>
+    </div>
+  </div>
+</section>
+
+<section id="clowns">
+  <div class="eyebrow mono" style="color:var(--glitch);">// known offenders</div>
+  <h2>Clowns</h2>
+  <p class="lede">Not teammates. Not friends. Logged here for the record.</p>
+  <div class="clowns-grid">
+    <div class="clown">
+      <div class="tag mono">Enemy #01</div>
+      <div class="name mono">Reconsisi</div>
+      <div class="desc mono">"Beg video"</div>
+    </div>
+    <div class="clown">
+      <div class="tag mono">Enemy #02</div>
+      <div class="name mono">Desire</div>
+      <div class="desc mono">"He desires to be good"</div>
+    </div>
+    <div class="clown">
+      <div class="tag mono">Enemy #03</div>
+      <div class="name mono">891</div>
+      <div class="desc mono">"No words needed"</div>
+    </div>
+    <div class="clown">
+      <div class="tag mono">Enemy #04</div>
+      <div class="name mono">Gaksik</div>
+      <div class="desc mono">"Our amigo"</div>
     </div>
   </div>
 </section>
